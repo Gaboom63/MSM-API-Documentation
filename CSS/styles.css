@@ -1,0 +1,79 @@
+@font-face { font-family: 'Monster Font'; src: url('fonts/OpenDyslexic-Bold.otf') format('opentype'); font-weight: normal; }
+
+* { font-family: 'Monster Font'; }
+
+
+body {
+	background-color: grey;
+	background: url(../images/backgrounds/Party\ Island\ Sky.jpg);
+}
+
+#title { 
+	text-align: center; 
+	background: linear-gradient(to bottom, lightgreen, rgb(245, 189, 84)); 
+		-webkit-background-clip: text; 
+		-webkit-text-fill-color: transparent; 
+		-webkit-text-stroke: 1px black; 
+	margin-top: 20px; 
+	font-weight: bold; 
+}
+
+#mainContainer {
+	position: absolute;
+	width: 1000px;
+	height: 500px;
+	border: 2px solid black;
+
+	border-radius: 25px;
+	corner-shape: squircle;
+	background-color: #222222;
+	opacity: .8;
+
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -40%);
+}
+
+#monsterImgContainer {
+	width: 160px;
+	height: 160px;
+
+	margin-left: 15px;
+	margin-top: 15px;
+	border-radius: 15px;
+	corner-shape: squircle;
+
+	border: 2px solid lightgrey;
+
+}
+
+#infoContainer {
+	width: 300px;
+	height: 90%;
+
+	border-radius: 15px;
+	corner-shape: squircle;
+
+	margin-left: 650px;
+	margin-top: -160px;
+	border: 2px solid lightgrey;
+}
+
+#fakeConsole {
+	position: absolute;
+	width: 500px;
+	height: 200px;
+
+	top: 55%;
+	left: 1.5%;
+
+	border-radius: 15px;
+	corner-shape: squircle;
+
+	/*margin-left: 250px;*/
+	/*margin-top: -1px;*/
+	border: 2px solid lightgrey;
+
+	background-color: #000000;
+}
+
