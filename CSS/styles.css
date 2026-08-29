@@ -5,7 +5,16 @@
 
 body {
 	background-color: grey;
-	background: url(../images/backgrounds/Party\ Island\ Sky.jpg);
+	background: url(../images/backgrounds/SwetiSettlementSky.jpg)no-repeat center center fixed; 
+	background-size: cover;
+}
+
+code {
+  background-color: black; /* Light grey background */
+  color: lightgrey;            /* Dark red text color commonly used for code */
+  padding: 2px 6px;          /* Space around the text */
+  border-radius: 4px;        /* Rounded corners */
+  font-family: monospace;    /* Ensures a code-style font */
 }
 
 #title { 
@@ -35,15 +44,33 @@ body {
 }
 
 #monsterImgContainer {
+	position: absolute;
 	width: 160px;
-	height: 160px;
+	height: 200px;
 
-	margin-left: 15px;
-	margin-top: 15px;
+	margin-left: 20px;
+	margin-top: 25px;
 	border-radius: 15px;
 	corner-shape: squircle;
 
 	border: 2px solid lightgrey;
+	background-color: rgb(0,0,0,.6);
+  z-index: 100;
+}
+
+#drawImg {
+	position: absolute;
+	width: 150px;
+	height: auto;
+	left: 2.3%;
+	top: 25px;
+	display: none;
+}
+
+#drawImg[src] {
+	display: block;
+/* 	opacity: 1; */
+/* 	z-index: 000; */
 
 }
 
@@ -54,9 +81,14 @@ body {
 	border-radius: 15px;
 	corner-shape: squircle;
 
+	 padding-top: 5px;
+
 	margin-left: 650px;
-	margin-top: -160px;
+	margin-top: 20px;
 	border: 2px solid lightgrey;
+	color: lightgrey;
+	text-align: center;
+	overflow: none;
 }
 
 #fakeConsole {
@@ -75,5 +107,49 @@ body {
 	border: 2px solid lightgrey;
 
 	background-color: #000000;
+}
+
+#search {
+	width: 90%;
+	height: 20px;
+	border-radius: 15px;
+	corner-shape: squircle;
+	text-align: center;
+	background-color: #000000;
+	color: lightgray;
+}
+
+#infoDisplay {
+	position: absolute;
+	left: 200px;
+	top: 15px;
+	width: 430px;
+	height: 245px;
+	
+	border-radius: 25px;
+	corner-shape: squircle;
+	word-wrap: normal;
+
+  border: 2px solid lightgrey; 
+}
+
+#tryCommand {
+  position: absolute;
+	left: 52.5%;
+	top: 60%;
+	z-index: 100;
+		background-color: rgb(0,0,0,.6);
+  color: lightgrey;
+}
+
+#nameContainer{
+position: absolute; 
+	width: 140px;
+	height: 35px;
+	top: 44%;
+	left: 3%;
+/* 	border: 2px solid white; */
+	text-align: center;	
+	color: lightgrey;
 }
 
