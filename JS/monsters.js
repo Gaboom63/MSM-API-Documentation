@@ -4,9 +4,26 @@ let tryButton = document.getElementById('tryCommand');
 let terminalText = document.getElementById('terminalCommand'); 
 let monsterName = document.getElementById('monsterName');
 let consoleOutput = document.getElementById('command-output');
+// let socialsBox = document.getElementById('pullOutMenuContainer');
+// let socialsButton = document.getElementById('pullOutMenu');
 
 let activeDoc = null; 
 let loading = true;
+let press = 0; 
+
+// socialsButton.addEventListener('click', () => {
+//     if (press === 0) {
+//         socialsBox.classList.remove('putAwayAnimation');
+//         socialsBox.classList.add('pullOutAnimation');
+//         socialsButton.classList.add('active');
+//         press = 1; 
+//     } else if (press === 1) {
+//         socialsBox.classList.remove('pullOutAnimation');
+//         socialsBox.classList.add('putAwayAnimation');
+//         socialsButton.classList.remove('active');
+//         press = 0; 
+//     }
+// });
 
 async function runTryCommand(ID, COMMAND) {
 
@@ -34,8 +51,33 @@ async function runTryCommand(ID, COMMAND) {
             consoleOutput.innerHTML = `>_ ${results}`
         break;
 
+        case 8:
+            const evaluated = eval(`MSM.Mammott.imageUrl`);
+            const imgURL = typeof evaluated === "function" ? await evaluated() : await evaluated;
+            
+            terminalText.innerHTML = `MSM.Mammott.imageUrl`;
+            consoleOutput.innerHTML = `${imgURL}`
+        break;
+
+        case 10:
+            const evaluatedElement = eval(`${documents[10].COMMAND}`);
+            const elementURL = typeof evaluatedElement === "function" ? await evaluatedElement() : await evaluatedElement;
+
+            terminalText.innerHTML = `${documents[10].COMMAND}`;
+            consoleOutput.innerHTML = `${elementURL}`
+        break;
+
+        case 12:
+            const evaluatedIsland = eval(`${documents[12].COMMAND}`);
+            const islandURL = typeof evaluatedIsland === "function" ? await evaluatedIsland() : await evaluatedIsland;
+
+            terminalText.innerHTML = `${documents[12].COMMAND}`;
+            consoleOutput.innerHTML = `${islandURL}`
+        break;
+
+
         case 'reset':
-            monsterName.innerHTML = `Epic Spunge`; 
+            monsterName.innerHTML = `bb$enior`; 
             await loadMonsterImg()
             terminalText.innerHTML = `<i>Commands Will Appear Here</i>`; 
             consoleOutput.innerHTML = `<i>>_ Results Will Appear Here</i>`
@@ -53,6 +95,7 @@ search.addEventListener('input', (e) => {
         capitalizeSearch();
         loadDocs("remove");
         loadDocs();
+        console.log("Run Another Time")
     } else {
         loadDocs("remove"); 
         loadDocs("ALL");
@@ -123,11 +166,20 @@ function loadDocs(DOCS_TO_LOAD) {
         docDiv.innerHTML = `${DOC.NAME}`; 
         
 
-        if(DOCS_TO_LOAD !== "remove" && DOCS_TO_LOAD !== "colorReset" && search.value.slice(0,1) === DOC.NAME.slice(0,1)) {
+        if(DOCS_TO_LOAD !== "remove" && DOCS_TO_LOAD !== "colorReset" && search.value.slice(0,search.value.length) === DOC.NAME.slice(0,search.value.length) || search.value.toLowerCase() === "msm" || search.value.toLowerCase() === "ms" || search.value.includes("msm") || search.value.includes("ms")) {
             // IF YOU ADD ANYTHING DOCS_TO_LOAD WISE UPDATE IT HERE!!!
             infoContainer.appendChild(docDiv);
 
         } 
+
+        if(DOCS_TO_LOAD !== "remove" && DOCS_TO_LOAD !== "colorReset" && search.value.slice(0,1) === "." && DOC.NAME.includes(search.value)) {
+
+            infoContainer.appendChild(docDiv);
+        }
+
+        if(DOCS_TO_LOAD !== "remove" && DOCS_TO_LOAD !== "colorReset" && search.value.toLowerCase() === DOC.NAME.slice(0, search.value.length).toLowerCase()) {
+            infoContainer.appendChild(docDiv); 
+        }
 
         
         if(DOCS_TO_LOAD === "colorReset") {
@@ -156,4 +208,5 @@ function onLoad() {
 }
 
 onLoad();
+
 

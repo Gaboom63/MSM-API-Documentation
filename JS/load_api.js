@@ -45,7 +45,7 @@ let loaded = false;
 async function loadMonsterImg() {
 
     if(loaded) {
-        await MSM["Epic Spunge"].loadImage("drawImg");
+        await MSM["Bb$enior"].loadImage("drawImg");
     } else if (!loaded) {
         requestAnimationFrame(loadMonsterImg);
     }
