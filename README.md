@@ -8,5 +8,5 @@
 <br>
 <br>
 <p align="center">
-  <a href="" style="text-align: center;">MSM API Docs!</a>
+  <a href="https://gaboom63.github.io/MSM-API-Documentation" style="text-align: center;">MSM API Docs!</a>
 </p>
